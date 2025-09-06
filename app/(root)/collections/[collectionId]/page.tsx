@@ -8,7 +8,8 @@ const CollectionDetails = async ({
 }: {
   params: { collectionId: string };
 }) => {
-  const collectionDetails = await getCollectionsDetails(params.collectionId);
+  const { collectionId } = params;
+  const collectionDetails = await getCollectionsDetails(collectionId);
 
   return (
     <div className="flex flex-col">
