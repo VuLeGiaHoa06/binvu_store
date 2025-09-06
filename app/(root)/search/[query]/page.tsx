@@ -2,7 +2,11 @@ import { ProductCard } from "@/components";
 import { getSearchProducts } from "@/lib/actions/actions";
 import React from "react";
 
-const SearchPage = async ({ params }: { params: { query: string } }) => {
+const SearchPage = async ({
+  params,
+}: {
+  params: Promise<{ query: string }>;
+}) => {
   const { query } = await params;
   const searchedProducts = await getSearchProducts(query);
 
