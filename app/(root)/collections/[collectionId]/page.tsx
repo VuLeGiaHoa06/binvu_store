@@ -6,9 +6,9 @@ import React from "react";
 const CollectionDetails = async ({
   params,
 }: {
-  params: { collectionId: string };
+  params: Promise<{ collectionId: string }>;
 }) => {
-  const { collectionId } = params;
+  const { collectionId } = await params;
   const collectionDetails = await getCollectionsDetails(collectionId);
 
   return (
