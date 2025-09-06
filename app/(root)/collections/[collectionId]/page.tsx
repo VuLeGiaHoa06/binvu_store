@@ -8,8 +8,7 @@ const CollectionDetails = async ({
 }: {
   params: { collectionId: string };
 }) => {
-  const { collectionId } = await params;
-  const collectionDetails = await getCollectionsDetails(collectionId);
+  const collectionDetails = await getCollectionsDetails(params.collectionId);
 
   return (
     <div className="flex flex-col">
@@ -39,4 +38,4 @@ const CollectionDetails = async ({
 
 export default CollectionDetails;
 
-export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic";
