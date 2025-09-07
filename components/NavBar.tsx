@@ -42,7 +42,7 @@ const NavBar = () => {
         ))}
       </div>
 
-      <div className="max-md:w-[200px] w-[300px] flex justify-between items-center relative">
+      <div className="max-md:w-[200px] max-lg:mr-[10px] w-[300px] flex justify-between items-center relative">
         <input
           type="text"
           placeholder="Search..."
