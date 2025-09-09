@@ -10,6 +10,8 @@ const ProductDetails = async ({
   const productDetails = await getProductDetails(productId);
   const relatedProducts = await getRelatedProducts(productId);
 
+  console.log("productDetails", productDetails);
+
   return (
     <div className="flex flex-col gap-10 px-[59px] py-[30px]">
       <div className="flex gap-16 items-center justify-center px-10 py-10 max-md:flex-col max-md:gap-10">
