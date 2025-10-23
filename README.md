@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
+## Live Demo
+[https://yourproject.vercel.app](https://yourproject.vercel.app)
+
+## Demo Account
+| Role | Email | Password |
+|------|--------|-----------|
+| Admin | admin@example.com | 123456 |
+| User | user@example.com | 123456 |
+
 ## Getting Started
 
 First, run the development server:
