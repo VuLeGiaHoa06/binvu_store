@@ -2,13 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 
 ## Live Demo
-[https://yourproject.vercel.app](https://yourproject.vercel.app)
+https://binvu-store.vercel.app/
 
 ## Demo Account
 | Role | Email | Password |
 |------|--------|-----------|
-| Admin | admin@example.com | 123456 |
-| User | user@example.com | 123456 |
+| Admin | admin | 12345678 |
+| User | user | 12345678 |
 
 ## Getting Started
 
