@@ -1,4 +1,6 @@
-import { Gallery, ProductCard, ProductInfo } from "@/components";
+import Gallery from "@/components/Gallery";
+import ProductCard from "@/components/ProductCard";
+import ProductInfo from "@/components/ProductInfo";
 import { getProductDetails, getRelatedProducts } from "@/lib/actions/actions";
 
 const ProductDetails = async ({
@@ -9,8 +11,6 @@ const ProductDetails = async ({
   const { productId } = await params;
   const productDetails = await getProductDetails(productId);
   const relatedProducts = await getRelatedProducts(productId);
-
-  console.log("productDetails", productDetails);
 
   return (
     <div className="flex flex-col gap-10 px-[59px] py-[30px]">
@@ -36,3 +36,5 @@ const ProductDetails = async ({
 export default ProductDetails;
 
 export const dynamic = "force-dynamic";
+
+// 1. need to call api => voi moi id là một request

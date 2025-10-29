@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components";
+import  ProductCard  from "@/components/ProductCard";
 import { getSearchProducts } from "@/lib/actions/actions";
 import React from "react";
 
@@ -35,3 +35,7 @@ const SearchPage = async ({
 export const dynamic = "force-dynamic";
 
 export default SearchPage;
+
+// 1. need to call api - moi quert là một request
+// 2. ssr - show data - kh co interact
+// 3. nhiều productcard - nên call api ở đây - không call ở productcard

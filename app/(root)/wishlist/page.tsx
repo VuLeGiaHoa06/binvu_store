@@ -1,6 +1,7 @@
 "use client";
 
-import { Loader, ProductCard } from "@/components";
+import Loader from "@/components/Loader";
+import ProductCard from "@/components/ProductCard";
 import { getProductDetails } from "@/lib/actions/actions";
 import { useUser } from "@clerk/nextjs";
 import { useEffect, useState } from "react";
@@ -64,7 +65,7 @@ const Wishlist = () => {
   }, [signedInUser]);
 
   return (
-    <div className="px-[59px] py-[20px] flex flex-col gap-6">
+    <div className="px-[59px] py-[20px] flex flex-col gap-6 h-screen">
       <h1 className="text-[24px] font-bold">Your Wishlist</h1>
 
       {isLoading ? (
@@ -88,3 +89,6 @@ const Wishlist = () => {
 export default Wishlist;
 
 export const dynamic = "force-dynamic";
+
+// 1. csr - có interact by user => like
+// 2. call api

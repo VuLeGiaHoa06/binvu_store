@@ -65,19 +65,19 @@ const Cart = () => {
         <div className="flex gap-10 w-full max-md:flex-col">
           <div className="w-2/3 max-md:w-full">
             {cartItems && cartItems.length > 0 && (
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 ">
                 {cartItems.map((cartItem, index) => (
                   <div
                     key={cartItem.item._id}
-                    className="border-b border-gray-200 flex items-center justify-between gap-4 rounded-lg px-[20px]"
+                    className=" border border-red-500 mb-[10px] px-4 py-2 flex items-center justify-between gap-4 rounded-lg"
                   >
-                    <div className="flex gap-6">
+                    <div className="flex gap-6 items-center">
                       <Image
                         src={cartItem.item.media[0]}
                         alt="image"
                         width={100}
                         height={100}
-                        className="rounded-lg object-contain h-[100px] w-[100px]"
+                        className=" object-contain h-[100px] w-[100px] rounded-lg overflow-hidden"
                       />
                       <div className="flex flex-col gap-2 justify-center">
                         <p className="font-bold text-[20px]">
@@ -104,10 +104,10 @@ const Cart = () => {
                         />
                       </div>
                     </div>
-                    <div>
+                    <div className="bg-red-500 py-2 px-1 rounded-lg text-white hover:bg-red-500/90">
                       <Trash
                         size={16}
-                        className="hover:text-red-500 cursor-pointer"
+                        className=" cursor-pointer"
                         onClick={() => removeItem(cartItem.item._id)}
                       />
                     </div>
@@ -119,7 +119,7 @@ const Cart = () => {
           <div className="w-1/3 flex flex-col gap-6 bg-gray-100 p-4 rounded-lg max-md:w-full">
             <h3 className="font-bold text-[18px]">
               {`Summary (${cartItems.length} ${
-                cartItems.length > 0 ? "items" : "item"
+                cartItems.length > 1 ? "items" : "item"
               })`}
             </h3>
             <div className="flex justify-between items-center">
@@ -146,3 +146,7 @@ const Cart = () => {
 };
 
 export default Cart;
+
+// 1. csr - co nhieu tuong tác(checkout, max/min sl sp)
+
+// 2. need to call api

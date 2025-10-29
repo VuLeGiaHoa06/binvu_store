@@ -61,8 +61,12 @@ const HeartFavorite = ({ product, updateSignedInUser }: HeartFavoriteProps) => {
     }
   };
   return (
-    <button type="button" onClick={handleLike}>
-      <Heart fill={isLiked ? "red" : "white"} size={26} />
+    <button
+      type="button"
+      onClick={handleLike}
+      className="p-2 bg-white rounded-full shadow-lg"
+    >
+      <Heart fill={isLiked ? "red" : "white"} size={20} />
     </button>
   );
 };

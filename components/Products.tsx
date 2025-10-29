@@ -1,25 +1,38 @@
 import { getProducts } from "@/lib/actions/actions";
 import ProductCard from "./ProductCard";
+import { Button } from "./ui/button";
 
 const Products = async () => {
   const products = await getProducts();
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <h3 className="font-bold text-[30px] text-gray-500 px-8 py-4">
-        Products
-      </h3>
+    <div className="flex flex-col items-center justify-center gap-10 bg-[#F5F4F4] px-[59px] py-[80px]">
+      <div className="flex flex-col items-center gap-2 ">
+        <h3 className="font-bold text-[48px]">Featured Products</h3>
+
+        <p className="text-[18px] text-gray-400">
+          Handpicked items from our latest collection
+        </p>
+      </div>
       {!products || products.length === 0 ? (
         <p>No products found</p>
       ) : (
-        <div className="flex flex-wrap gap-16 mx-auto">
+        <div className="flex flex-wrap gap-16 mx-auto justify-center">
           {products.map((product: ProductType) => (
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
       )}
+      <Button variant={"outline"}>View All Products</Button>
     </div>
   );
 };
 
 export default Products;
+
+// 1. productCard - có nhiều
+// => fetch ở comp cha
+
+// 2. ở đây cần dữ liệu - để CHECK khi kh co sản phẫm
+
+// 3. ssr - không có tương tác

@@ -1,24 +1,21 @@
-import Image from "next/image";
-
-import banner from "../../public/banner.png";
-import { Collections, Products } from "@/components";
+import Collections from "@/components/Collections";
+import Products from "@/components/Products";
+import HeroSection from "@/components/HeroSection";
+import NewsLetter from "@/components/NewsLetter";
 
 export default function Home() {
   return (
-    <div>
-      <Image
-        src={banner}
-        alt="banner"
-        width={2000}
-        height={1000}
-        className="w-screen"
-      />
-
-      <div className="flex flex-col gap-8 px-[59px] py-[40px]">
-        <Collections />
-        <Products />
-      </div>
-      <div className="h-[300px] w-full"></div>
-    </div>
+    <>
+      <HeroSection />
+      <Collections />
+      <Products />
+      <NewsLetter />
+    </>
   );
 }
+
+// 1. ở đây không cần dữ liệu
+
+// 2. 2-comp-con không cần chung dữ liệu
+
+// 3. ssr - không có tương tác - cần re-render
