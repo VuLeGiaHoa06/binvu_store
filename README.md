@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
+## Live Demo
+https://binvu-store.vercel.app/
+
+## Demo Account
+| Role | Email | Password |
+|------|--------|-----------|
+| Admin | admin | 12345678 |
+| User | user | 12345678 |
+
 ## Getting Started
 
 First, run the development server:
