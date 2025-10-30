@@ -17,7 +17,7 @@ const Products = async () => {
       {!products || products.length === 0 ? (
         <p>No products found</p>
       ) : (
-        <div className="flex flex-wrap gap-16 mx-auto justify-center">
+        <div className="grid grid-cols-4 grid-flow-dense gap-6 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1">
           {products.map((product: ProductType) => (
             <ProductCard key={product._id} product={product} />
           ))}

@@ -3,9 +3,9 @@ import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
-import unCart from "@/public/uncart.png";
 import { Check, ChevronRight, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const OrderPage = async () => {
   const { userId } = await auth();
@@ -84,19 +84,23 @@ const OrderPage = async () => {
                   } `}
                 >
                   {order.products.map((order: OrderItemType) => (
-                    <div key={order._id} className="flex items-center gap-4">
+                    <Link
+                      href={`/products/${order.product._id}`}
+                      key={order._id}
+                      className="flex items-center gap-4"
+                    >
                       <Image
-                        src={order.product.media[0]}  
+                        src={order.product?.media[0]}
                         alt="product-detail"
                         width={200}
                         height={200}
                         className="flex-none h-[150px] w-[150px] rounded-lg object-cover"
                       />
-                      <div className="flex-1 flex items-center justify-between ">
+                      <div className="flex-1 grid grid-cols-3 gap-y-3 items-center justify-between ">
+                        <h1 className="text-[20px] font-bold col-span-3">
+                          {order.product?.title}
+                        </h1>
                         <div className="space-y-3">
-                          <h1 className="text-[20px] font-bold">
-                            {order.product.title}
-                          </h1>
                           <div>
                             <p className="text-[12px] text-gray-500 font-semibold">
                               Color
@@ -110,11 +114,11 @@ const OrderPage = async () => {
                               Price
                             </p>
                             <p className="text-[14px] font-semibold">
-                              ${order.product.price}
+                              ${order.product?.price}
                             </p>
                           </div>
                         </div>
-                        <div className="self-end space-y-3">
+                        <div className="space-y-3">
                           <div>
                             <p className="text-[12px] text-gray-500 font-semibold">
                               Size
@@ -132,7 +136,7 @@ const OrderPage = async () => {
                             </p>
                           </div>
                         </div>
-                        <div className="space-y-2 self-end">
+                        <div className="space-y-2 justify-self-end">
                           <button
                             type="button"
                             className="w-[138px] px-4 py-2 border border-gray-300 rounded-lg flex gap-2 items-center justify-center hover:bg-gray-100"
@@ -149,7 +153,7 @@ const OrderPage = async () => {
                           </button>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               ))}

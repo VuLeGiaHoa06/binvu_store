@@ -20,9 +20,7 @@ const ProductDetails = async ({
       </div>
 
       <div className="flex flex-col justify-center items-center gap-10">
-        <h1 className="font-bold text-[24px] text-gray-500">
-          Related Products
-        </h1>
+        <h1 className="font-bold text-[36px]">Related Products</h1>
         <div className="flex justify-center gap-10">
           {relatedProducts.map((product: ProductType) => (
             <ProductCard product={product} key={product._id} />
