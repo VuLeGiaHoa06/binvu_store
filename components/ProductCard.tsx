@@ -3,17 +3,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeartFavorite from "./HeartFavorite";
-import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 type ProductCardProps = {
   product: ProductType;
   updateSignedInUser?: (updatedUser: UserType) => void;
+  page?: string;
 };
 
-const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
+const ProductCard = ({
+  product,
+  updateSignedInUser,
+  page,
+}: ProductCardProps) => {
   const discountLabel = Math.round(
     ((product.orgPrice - product.price) / product.orgPrice) * 100
   );
+  const router = useRouter();
+
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    router.push("/");
+  };
 
   return (
     <Link
@@ -56,6 +68,16 @@ const ProductCard = ({ product, updateSignedInUser }: ProductCardProps) => {
             ${product.orgPrice}
           </p>
         </div>
+
+        {page === "wishlist" && (
+          <button
+            type="button"
+            onClick={handleAddToCart}
+            className="bg-[#1E3A8A] text-white rounded-lg w-full py-2 hover:bg-[#1E3A8A]/90"
+          >
+            Add to Cart
+          </button>
+        )}
       </div>
     </Link>
   );

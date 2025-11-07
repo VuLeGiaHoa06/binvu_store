@@ -65,23 +65,52 @@ const Wishlist = () => {
   }, [signedInUser]);
 
   return (
-    <div className="px-[59px] py-[20px] flex flex-col gap-6 h-screen">
-      <h1 className="text-[24px] font-bold">Your Wishlist</h1>
+    <div className="px-8 py-16">
+      <div className="space-y-2 mb-[20px]">
+        <h1 className="text-[34px] font-bold">Your Wishlist</h1>
+        <p className="text-[18px] text-gray-500">
+          {wishList.length > 1
+            ? `${wishList.length} items `
+            : `${wishList.length} item `}
+          saved
+        </p>
+      </div>
 
       {isLoading ? (
         <Loader />
       ) : wishList.length === 0 ? (
-        <p>No items in your wishlist</p>
+        <p>No item in your wishlist</p>
       ) : (
-        <div className="flex flex-wrap mx-auto gap-16">
+        <div
+          className="grid grid-cols-4
+         grid-flow-dense gap-6 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 justify-items-center"
+        >
           {wishList.map((product: ProductType) => (
             <ProductCard
               product={product}
               updateSignedInUser={updateSignedInUser}
+              page="wishlist"
             />
           ))}
         </div>
       )}
+
+      <div className="p-12 rounded-lg bg-[#1E3A8A] text-center mt-[20px]">
+        <h3 className="text-[30px] font-bold mb-3 text-white">
+          Still looking for something?
+        </h3>
+        <p className="text-[18px] mb-6 opacity-90 text-white">
+          Explore thousands of products with exclusive deals available only this
+          weekend
+        </p>
+
+        <button
+          type="button"
+          className="rounded-lg bg-white hover:bg-white/90 px-3 py-2"
+        >
+          Continue Shopping
+        </button>
+      </div>
     </div>
   );
 };

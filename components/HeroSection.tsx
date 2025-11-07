@@ -15,7 +15,7 @@ const HeroSection = () => {
               <p className="text-[12px] bg-[#EEE3D7] rounded-full w-fit px-4 py-2 font-semibold uppercase tracking-wider">
                 New Collection
               </p>
-              <h2 className="text-[48px] lg:text-[60px] font-bold">
+              <h2 className="text-[48px] leading-none lg:text-[60px] font-bold">
                 New Fashion Item Released Now!
               </h2>
               <p className="text-[18px] max-w-md">
@@ -23,9 +23,30 @@ const HeroSection = () => {
                 accessories designed for the modern lifestyle.
               </p>
             </div>
-            <Button className="w-fit text-primary-foreground px-8 py-6 text-lg rounded-lg transition-all hover:shadow-lg">
+            <Button className="w-fit text-primary-foreground px-8 py-6 text-lg rounded-full transition-all hover:shadow-lg">
               Shop Now
             </Button>
+
+            <div className="flex gap-10 items-center">
+              <div>
+                <p className="text-[40px] font-bold">200+</p>
+                <p className="text-gray-500">Intenational Brands</p>
+              </div>
+
+              <div className="h-[84px] border border-gray-200"></div>
+
+              <div>
+                <p className="text-[40px] font-bold">2,000+</p>
+                <p className="text-gray-500">High Quality Products</p>
+              </div>
+
+              <div className="h-[84px] border border-gray-200"></div>
+
+              <div>
+                <p className="text-[40px] font-bold">30,000+</p>
+                <p className="text-gray-500">Happy Customers</p>
+              </div>
+            </div>
           </div>
 
           <div className="relative h-96 sm:h-[500px] flex items-center justify-center">

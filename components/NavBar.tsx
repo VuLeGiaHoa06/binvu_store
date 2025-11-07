@@ -50,7 +50,7 @@ const NavBar = () => {
         <input
           type="text"
           placeholder="Search for products..."
-          className="outline-none rounded-2xl bg-gray-200 w-full py-2 px-4"
+          className="outline-none rounded-full bg-gray-200 w-full py-2 px-4"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -59,6 +59,7 @@ const NavBar = () => {
           disabled={query === ""}
           className="absolute right-4 cursor-pointer"
           onClick={() => {
+            setQuery("");
             router.push(`/search/${query}`);
           }}
         >
@@ -69,11 +70,17 @@ const NavBar = () => {
       <div className="flex gap-4 items-center ">
         <Button
           variant={"outline"}
-          onClick={() => router.push("/cart")}
+          onClick={() => {
+            if (!user) {
+              router.push("/sign-in");
+              return;
+            }
+            router.push("/cart");
+          }}
           className="flex gap-2 border border-gray-500 rounded-lg px-4 py-2"
         >
           <ShoppingCart />
-          <p className="max-lg:hidden">Cart ({cartItems.length})</p>
+          <p className="max-lg:hidden">Cart ({!user ? 0 : cartItems.length})</p>
         </Button>
 
         <div

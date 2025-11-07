@@ -7,7 +7,7 @@ const Collections = async () => {
   const collections = await getCollections();
 
   return (
-    <div className="flex flex-col items-center justify-center gap-10 px-[59px] py-[80px] bg-[#F9F8F8]">
+    <div className="flex flex-col items-center justify-center gap-10 px-[59px] py-[40px] pb-[80px] bg-[#F9F8F8]">
       <div className="flex flex-col items-center gap-2 ">
         <h3 className="font-bold text-[48px] text-center">
           Explore Our Collections

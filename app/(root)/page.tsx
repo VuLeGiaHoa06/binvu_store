@@ -2,11 +2,13 @@ import Collections from "@/components/Collections";
 import Products from "@/components/Products";
 import HeroSection from "@/components/HeroSection";
 import NewsLetter from "@/components/NewsLetter";
+import BrandTrip from "@/components/BrandTrip";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <BrandTrip />
       <Collections />
       <Products />
       <NewsLetter />

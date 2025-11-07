@@ -1,4 +1,4 @@
-import  ProductCard  from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
 import { getSearchProducts } from "@/lib/actions/actions";
 import React from "react";
 
@@ -13,10 +13,19 @@ const SearchPage = async ({
   const decodedQuery = decodeURIComponent(query);
 
   return (
-    <div className="px-[59px] py-[20px] flex flex-col gap-8">
-      <h1 className="font-bold text-[24px] text-gray-500">
-        Search results for "{decodedQuery}"
-      </h1>
+    <div className="px-8 py-16">
+      <div className="mb-[40px]">
+        <h1 className="text-[34px] font-bold">
+          Search results for "{decodedQuery}"
+        </h1>
+
+        <p className="text-gray-400 mb-[10px]">
+          {searchedProducts.length > 1
+            ? `${searchedProducts.length} products `
+            : `${searchedProducts.length} product `}
+          found
+        </p>
+      </div>
 
       {!searchedProducts ||
         (searchedProducts.length === 0 && (

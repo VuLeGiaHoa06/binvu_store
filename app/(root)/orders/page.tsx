@@ -48,7 +48,7 @@ const OrderPage = async () => {
               <p className="text-[12px] text-gray-500 font-semibold text-right">
                 Status
               </p>
-              <p className="text-[14px] font-semibold">Delivered - test</p>
+              <p className="text-[14px] font-semibold">Delivered</p>
             </div>
           </div>
           <div className="flex justify-between gap-4">
@@ -66,7 +66,7 @@ const OrderPage = async () => {
               <p className="text-[12px] text-gray-500 font-semibold">
                 Order Date
               </p>
-              <p className="text-[18px] font-bold">27/8/2025 - test</p>
+              <p className="text-[18px] font-bold">27/8/2025</p>
             </div>
           </div>
         </div>
