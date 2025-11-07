@@ -65,7 +65,7 @@ const ProductCard = ({
         <div className="flex gap-2 items-baseline">
           <p className="font-bold text-[28px]">${product.price}</p>
           <p className="font-bold text-[18px] text-gray-500 line-through">
-            ${product.orgPrice}
+            ${`${product.orgPrice}`}
           </p>
         </div>
 
