@@ -18,7 +18,8 @@ const ProductCard = ({
 }: ProductCardProps) => {
   const discountLabel = Math.round(
     ((product.orgPrice - product.price) / product.orgPrice) * 100
-  );
+  ).toString();
+
   const router = useRouter();
 
   const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -65,7 +66,7 @@ const ProductCard = ({
         <div className="flex gap-2 items-baseline">
           <p className="font-bold text-[28px]">${product.price}</p>
           <p className="font-bold text-[18px] text-gray-500 line-through">
-            ${`${product.orgPrice}`}
+            ${product.orgPrice.toString()}
           </p>
         </div>
 
