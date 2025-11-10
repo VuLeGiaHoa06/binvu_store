@@ -17,7 +17,7 @@ const ProductCard = ({
   page,
 }: ProductCardProps) => {
   const discountLabel = Math.round(
-    ((product?.orgPrice - product?.price) / product?.orgPrice) * 100
+    ((product.orgPrice - product.price) / product.orgPrice) * 100
   );
 
   const router = useRouter();
@@ -64,9 +64,9 @@ const ProductCard = ({
         </p>
 
         <div className="flex gap-2 items-baseline">
-          <p className="font-bold text-[28px]">${product?.price}</p>
+          <p className="font-bold text-[28px]">${product.price}</p>
           <p className="font-bold text-[18px] text-gray-500 line-through">
-            ${typeof product.orgPrice === "number" && product?.orgPrice}
+            {product.orgPrice}
           </p>
         </div>
 
